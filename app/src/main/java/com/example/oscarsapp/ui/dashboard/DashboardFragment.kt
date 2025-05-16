@@ -1,6 +1,7 @@
 package com.example.oscarsapp.ui.dashboard
 
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,8 +42,21 @@ class DashboardFragment : Fragment() {
         }
 
 
+        binding.moneyslider.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                val dollars: String = progress.toString()
+                val text = "$$dollars"
+                binding.PaymentAmountText.setText(text)
+            }
 
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+                // you can probably leave this empty
+            }
 
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+                // you can probably leave this empty
+            }
+        })
         binding.sendButton.setOnClickListener{
             val popuptext = binding.PaymentAmountText.text
 

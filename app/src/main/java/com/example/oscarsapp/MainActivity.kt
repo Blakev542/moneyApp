@@ -39,9 +39,5 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
-    fun sendMoney(view: View) {
 
-        Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show()
-
-    }
 }
